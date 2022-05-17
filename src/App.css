@@ -10,3 +10,19 @@
     margin: 0;
 }
 
+.tabs-box {
+  border: 1px solid #0099ff;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  border-radius: 15px;
+  padding: 15px;
+  height: 100vh;
+}
+
+.news-box {
+  border: 1px solid #0099ff;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  border-radius: 15px;
+  padding: 15px;
+  height: 100vh;
+}
+

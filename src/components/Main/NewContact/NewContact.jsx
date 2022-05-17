@@ -1,48 +1,22 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './newcontact.css'
 
-class NewContact extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: "",
-        };
-
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-
-    }
-
-    handleChange(event) {
-        this.setState({value: event.target.value});
-    }
-    
-    handleSubmit(event) {
-        event.preventDefault();
-        console.log(this.state.value);
-    }
-
-    render () {
+function NewContact (props){
         return (
-            <div className="new-contact">
-                <h2 className='title'>New Contact</h2>
-                <form  className="news-form" id="conForm" onSubmit={this.handleSubmit}>
+                <form  className="news-form" onSubmit={props.formSubmit}>
                     <label className="new-title">Name:</label>
-                    <input value={this.state.value} onChange={this.handleChange} className="news-name" type="text" required />
+                    <input className="news-name" type="text" onChange={props.changeName} required />
                     <label className="new-title">Number:</label>
-                    <input id="telNum" className="num-input" type="number" required />
+                    <input className="num-input" type="number" onChange={props.changeNum} required />
                     <label className="new-title">Category:</label>
-                    <input id="conSelect" className="news-name" type="text" list="date" required />
-                    <datalist className="news-select" id="date">
+                    <select className="news-select" onChange={props.changeSelect}>
                         <option id="conFamily" className="category" value="Family">Family</option>
                         <option id="conFriend" value="Friends" >Friends</option>
                         <option id="conColl" value="Collective">Collective</option>
-                    </datalist>
+                    </select>
                     <button id="sumbitBtn" type="submit" className="btn btn-primary submit-btn">Submit</button>
                 </form>
-            </div>
         )
-    }
 }
 
 export default NewContact
