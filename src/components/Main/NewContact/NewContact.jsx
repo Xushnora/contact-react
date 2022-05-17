@@ -10,9 +10,10 @@ function NewContact (props){
                     <input className="num-input" type="number" onChange={props.changeNum} required />
                     <label className="new-title">Category:</label>
                     <select className="news-select" onChange={props.changeSelect}>
-                        <option id="conFamily" className="category" value="Family">Family</option>
-                        <option id="conFriend" value="Friends" >Friends</option>
-                        <option id="conColl" value="Collective">Collective</option>
+                        <option id="conFamily" className="category" value="Family">All</option>
+                        <option id="conFriend" value="family" >family</option>
+                        <option id="conFriend" value="friend" >friend</option>
+                        <option id="conColl" value="collective">collective</option>
                     </select>
                     <button id="sumbitBtn" type="submit" className="btn btn-primary submit-btn">Submit</button>
                 </form>

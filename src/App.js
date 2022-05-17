@@ -18,32 +18,34 @@ class App extends Component {
 
       listContactArr: [
         {
+          id: 1,
           name: "Laziza",
           number: 992345678,
-          category: "friends"
+          category: "friend"
         },
         {
+          id: 2,
           name: "Xushnora",
           number: 992345678,
           category: "family"
         }
-
+      ],
+      newArrObj: [
+        {
+          id: 1,
+          name: "Laziza",
+          number: 992345678,
+          category: "friend"
+        },
+        {
+          id: 2,
+          name: "Xushnora",
+          number: 992345678,
+          category: "family"
+        }
       ]
     }
   }
-
-  // typeHandler = (e) => {
-  //   let obj = {}
-
-  //   if(e.target.type === 'text') {
-  //     obj.name = e.target.value
-  //   }
-  //   if(e.target.type === 'number') {
-  //     obj.number = e.target.value
-  //   }
-
-  //   this.setState({listContactArr: {...this.state.listContactArr, ...obj}})
-  // }
 
   changeName = (e) => {
     // console.log(e.target.value);
@@ -75,13 +77,44 @@ class App extends Component {
   changeButtonHandler = (e) => {
     // console.log(e.target.id);
     if(e.target.id === "all") {
-      
+      this.setState({listContactArr: [...this.state.newArrObj]})
+    }
+
+    if(e.target.id === "family") {
+      let newArr = []
+      this.state.newArrObj.map((obj) => {
+        if(obj.category === "family") {
+          newArr.push(obj)
+        }
+      }) 
+      this.setState({listContactArr: [...newArr]})
+    }
+
+    if(e.target.id === "friend") {
+      let newArr = []
+      this.state.newArrObj.map((obj) => {
+        if(obj.category === "friend") {
+          newArr.push(obj)
+        }
+      }) 
+      this.setState({listContactArr: [...newArr]})
+    }
+
+    if(e.target.id === "collective") {
+      let newArr = []
+      this.state.newArrObj.map((obj) => {
+        if(obj.category === "collective") {
+          newArr.push(obj)
+        }
+      }) 
+      this.setState({listContactArr: [...newArr]})
     }
   }
 
   formSubmit = (e) => {
     e.preventDefault();
-    this.setState({listContactArr: [...this.state.listContactArr, {...this.state.listObj}]})
+    this.setState({listContactArr: [...this.state.newArrObj, {...this.state.listObj}]})
+    this.setState({newArrObj: [...this.state.newArrObj, {...this.state.listObj}]})
     e.target.reset()
   }
 
